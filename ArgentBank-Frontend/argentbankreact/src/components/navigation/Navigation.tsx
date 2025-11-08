@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/argentBankLogo.png';
+import logo from '../../assets/img/argentBankLogo.png';
 
 
  export const Navigation:React.FC = () => {
 
-    const [userProfileName, setUserProfileName] = useState(''); // Remplacez par la logique réelle pour obtenir le nom du profil utilisateur
+     const [userProfileName, setUserProfileName] = useState(''); // Remplacez par la logique réelle pour obtenir le nom du profil utilisateur
 
 
     return (
