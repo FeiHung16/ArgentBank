@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/img/argentBankLogo.png';
+import logo from '../../assets/img/argentBankLogo.webp';
 
 
  export const Navigation:React.FC = () => {

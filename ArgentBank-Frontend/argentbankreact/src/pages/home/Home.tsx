@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigation } from '../../components/navigation/Navigation';
 import { Footer } from '../../components/footer/Footer';
-import iconChat from '../../assets/img/icon-chat.png';
-import iconMoney from '../../assets/img/icon-money.png';
-import iconSecurity from '../../assets/img/icon-security.png';
+import iconChat from '../../assets/img/icon-chat.webp';
+import iconMoney from '../../assets/img/icon-money.webp';
+import iconSecurity from '../../assets/img/icon-security.webp';
 import { Feature } from '../../components/feature/Feature';
 
 
