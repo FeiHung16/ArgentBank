@@ -5,8 +5,6 @@ import authReducer from "./feature/authSlices";
 
 
 
-
-
 const persistConfig = {
     key: "auth",
     storage,

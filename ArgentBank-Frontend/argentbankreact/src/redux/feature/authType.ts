@@ -13,5 +13,5 @@ export interface AuthState {
     isAuthenticated: boolean;
     isEditingProfile: boolean;
     error : string | null;
-    user: userProfile;
+    user: UserProfile;
 }
