@@ -7,3 +7,4 @@ export const selectIsAuthenticated = (state: RootState) => state.auth.isAuthenti
 export const selectUserProfile = (state: RootState) => state.auth.user;
 export const selectError = (state: RootState) => state.auth.error;
 export const selectLoading = (state: RootState) => state.auth.loading;
+export const selectIsEditingProfile = (state: RootState) => state.auth.isEditingProfile;

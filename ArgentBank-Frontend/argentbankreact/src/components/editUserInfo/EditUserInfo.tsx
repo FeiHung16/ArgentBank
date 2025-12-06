@@ -13,12 +13,10 @@ export const EditUserInfo: React.FC = () => {
 
     const dispatch: AppDispatch = useDispatch(); // Placeholder for dispatch function
 
-    // Utilisation de la déstructuration pour obtenir les informations de l'utilisateur
-    const { error, loading, user } = useSelector((state: RootState) => ({
-        error: selectError(state),
-        loading: selectLoading(state),
-        user: selectUserProfile(state),
-    }));
+    const error = useSelector(selectError);
+    const loading = useSelector(selectLoading);
+    const user = useSelector(selectUserProfile);
+
 
     // Variables d'état locales pour les données de l'utilisateur
     const [userName, setUserName] = useState('');
