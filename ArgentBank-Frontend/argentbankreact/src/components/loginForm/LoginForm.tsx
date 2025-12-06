@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { type AppDispatch } from '../../redux/store';
 import { useNavigate } from 'react-router-dom';
 import { selectError, selectIsAuthenticated, selectLoading } from '../../redux/feature/authSelector';
 import { loginUser } from '../../redux/feature/authActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -11,17 +12,17 @@ export const LoginForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    const dispatch = useAppDispatch(); 
+    const dispatch: AppDispatch = useDispatch(); 
     const navigate = useNavigate();
 
-    const error = useAppSelector(selectError);
-    const loading = useAppSelector(selectLoading);
-    const isAuthenticated = useAppSelector(selectIsAuthenticated);
+    const error = useSelector(selectError);
+    const loading = useSelector(selectLoading);
+    const isAuthenticated = useSelector(selectIsAuthenticated);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // Dispatch login action here
-        dispatch(loginUser({ email, password, rememberMe }));
+        dispatch(loginUser({ email, password, rememberMe }) as any);
     };
 
     useEffect(() => {
