@@ -7,7 +7,7 @@ import { Footer } from '../../components/footer/Footer';
 import { fetchUserProfile } from '../../redux/feature/authActions';
 import { selectError, selectIsEditingProfile, selectLoading, selectUserProfile } from '../../redux/feature/authSelector';
 import { useDispatch, useSelector } from 'react-redux';
-import type { AppDispatch, RootState } from '../../redux/store';
+import type { AppDispatch } from '../../redux/store';
 
 
 // Données des comptes
