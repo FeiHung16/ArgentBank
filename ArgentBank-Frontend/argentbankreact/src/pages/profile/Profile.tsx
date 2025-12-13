@@ -47,7 +47,7 @@ export const Profile: React.FC = () => {
     // Effect to fetch user profile when the component mounts
     useEffect(() => {
         // We dispatch fetchUserProfile to load the profile on startup
-        dispatch(fetchUserProfile());
+        dispatch(fetchUserProfile() as any);
     }, [dispatch]);
     // Effect to update local fields when the userProfile changes
     useEffect(() => {

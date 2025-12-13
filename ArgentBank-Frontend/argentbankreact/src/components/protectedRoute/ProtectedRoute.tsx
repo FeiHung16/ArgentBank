@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { RootState } from "../../redux/store";
 
 
-export const ProtectedRoute:React.FC = () => {
-  return (
-  <>
-  </>
-  );
-}
+
+
+// We create a component for protected routes, here specifically for the profile route
+export const ProtectedRoute: React.FC = () => {
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+  // The Outlet component from react-router-dom allows us to render the children of the protected route
+  // If the user is not authenticated, we redirect them to the sign-in page
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+};
