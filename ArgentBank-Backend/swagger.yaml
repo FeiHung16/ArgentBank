@@ -224,7 +224,7 @@ paths:
           description: Transaction not found
         "500":
           description: Internal server error
-    post:
+    put:
       security:
         - Bearer: []
       tags:
