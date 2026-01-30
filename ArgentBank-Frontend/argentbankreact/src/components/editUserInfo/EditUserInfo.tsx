@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import type { AppDispatch, RootState } from '../../redux/store';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../redux/store';
 import { selectError, selectLoading, selectUserProfile } from '../../redux/feature/authSelector';
 import { updateUserProfile } from '../../redux/feature/authActions';
 import { cancelProfileEdit } from '../../redux/feature/authSlices';
@@ -11,7 +11,7 @@ import './EditUserInfo.scss';
 
 export const EditUserInfo: React.FC = () => {
 
-    const dispatch: AppDispatch = useDispatch(); // Placeholder for dispatch function
+    const dispatch = useAppDispatch(); // Placeholder for dispatch function
 
     const error = useSelector(selectError);
     const loading = useSelector(selectLoading);
@@ -38,7 +38,7 @@ export const EditUserInfo: React.FC = () => {
         try {
             // We dispatch the action to update userName
             // unwrap() is used to directly get the result of the action (success or failure)
-            await dispatch(updateUserProfile(userName)).unwrap();
+            await ((dispatch as any)(updateUserProfile(userName))).unwrap();
             console.log("UserName updated successfully");
         } catch (error) {
             console.error("Error while updating user profile:", error);
